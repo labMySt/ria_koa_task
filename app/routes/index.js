@@ -11,12 +11,13 @@ module.exports = function routes(app, passport) {
         co   = require('co'),
         Router = require('koa-router'),
         authed = require('../helpers/authedMiddleware'),
-        
-        
+
+
     // Controllers
         indexController  = require('../controllers/indexController'),
         loginController  = require('../controllers/loginController'),
-        secureController = require('../controllers/secureController');
+        secureController = require('../controllers/secureController'),
+        goodsController  = require('../controllers/goodsController');
 
     var router = new Router();
 
@@ -24,7 +25,11 @@ module.exports = function routes(app, passport) {
         .get('/',          indexController.index)
         .get('/users',     indexController.list)
         .get('/users/:id', indexController.getId)
-
+        //====================================== goods API
+        .get('/goods/:id', goodsController.getId)
+        .post('/goods/', goodsController.insert)
+        .del('/goods/:id', goodsController.remove)
+        //=================================================
         .get('/login',     loginController.login)
         .post('/login',
             passport.authenticate('local', {

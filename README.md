@@ -24,14 +24,3 @@ $ vi package.json
 ```sh
 $ vi config/default.js
 ```
-
-simple test
-===========
-
-**Make your own spec-file for testing and start test:**
-
-```sh
-$ cd my_new_project
-$ npm install
-$ npm test
-```

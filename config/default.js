@@ -15,5 +15,8 @@ module.exports = {
     },
     session: {
         secretKey: 'myKoajsSecretKey'
+    },
+    keyGen: {
+      length: 5
     }
 };
